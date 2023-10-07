@@ -1,0 +1,74 @@
+<div class="d-flex container p-2">
+  <div class="w-50 mx-2">
+    <div class="d-flex">
+      <select
+        class="form-select w-25"
+        aria-label="Default select example"
+        [(ngModel)]="sourceLanguageOption"
+      >
+        <option selected value="">Select</option>
+        <option *ngFor="let option of sourceLanguageOptions">
+          {{ option.language | uppercase }}
+        </option>
+      </select>
+      <label
+        for="floatingTextarea2Disabled"
+        class="form-label lang border-primary border-bottom mb-0 pb-2 fs-5"
+        >{{ sourceLanguageOption | uppercase }}</label
+      >
+    </div>
+
+    <textarea
+      class="form-control"
+      id="floatingTextarea2Disabled"
+      placeholder="Enter your wanted text to translate here"
+      rows="5"
+      [(ngModel)]="sourceLanguageValue"
+    >
+    </textarea>
+  </div>
+
+  <i
+    class="fa-solid fa-right-left pt-2 m-1 text-secondary cursor-pointer"
+    (click)="onSwitchLanguages()"
+  ></i>
+
+  <div class="w-50 mx-2">
+    <div class="d-flex">
+      <select
+        class="form-select w-25"
+        aria-label="Default select example"
+        [(ngModel)]="translatedLanguageOption"
+      >
+        <option selected value="">Select</option>
+        <option *ngFor="let option of sourceLanguageOptions">
+          {{ option.language | uppercase }}
+        </option>
+      </select>
+      <label
+        for="floatingTextarea2Disabled"
+        class="form-label lang border-primary border-bottom mb-0 pb-2 fs-5"
+        >{{ translatedLanguageOption | uppercase }}</label
+      >
+    </div>
+    <textarea
+      class="form-control"
+      placeholder="Here we'll display your text translated"
+      id="floatingTextarea2Disabled"
+      rows="5"
+      disabled
+      >{{ translatedLanguageValue }}</textarea
+    >
+  </div>
+</div>
+<div class="d-flex justify-content-between container pe-3">
+  <p>Detected language: {{ detectedLanguageValue | uppercase }}</p>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="onTranslateButton()"
+    [disabled]="!sourceLanguageValue || !translatedLanguageOption"
+  >
+    Translate
+  </button>
+</div>
