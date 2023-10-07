@@ -48,7 +48,6 @@ export class InputComponent {
       .subscribe((res: DetectedLanguageResponse) => {
         this.detectedLanguageValue = res.data.detections[0][0].language;
         this.sourceLanguageOption = this.detectedLanguageValue;
-        this.sourceLanguageOptions.push(this.detectedLanguageValue);
       });
   }
 
