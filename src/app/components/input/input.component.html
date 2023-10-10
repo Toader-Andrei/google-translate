@@ -6,7 +6,7 @@
         aria-label="Default select example"
         [(ngModel)]="sourceLanguageOption"
       >
-        <option selected value="">Select</option>
+        <option value="">Select</option>
         <option *ngFor="let option of sourceLanguageOptions">
           {{ option.language | uppercase }}
         </option>
@@ -20,7 +20,7 @@
 
     <textarea
       class="form-control"
-      id="floatingTextarea2Disabled"
+      id="floatingTextarea2"
       placeholder="Enter your wanted text to translate here"
       rows="5"
       [(ngModel)]="sourceLanguageValue"
@@ -40,7 +40,7 @@
         aria-label="Default select example"
         [(ngModel)]="translatedLanguageOption"
       >
-        <option selected value="">Select</option>
+        <option value="">Select</option>
         <option *ngFor="let option of sourceLanguageOptions">
           {{ option.language | uppercase }}
         </option>
@@ -61,8 +61,16 @@
     >
   </div>
 </div>
-<div class="d-flex justify-content-between container pe-3">
-  <p>Detected language: {{ detectedLanguageValue | uppercase }}</p>
+<div
+  class="d-flex justify-content-between container pe-3"
+  [ngClass]="{
+    'justify-content-between': detectedLanguageValue,
+    'justify-content-end': !detectedLanguageValue
+  }"
+>
+  <p *ngIf="detectedLanguageValue">
+    Detected language: {{ detectedLanguageValue | uppercase }}
+  </p>
   <button
     type="button"
     class="btn btn-primary"

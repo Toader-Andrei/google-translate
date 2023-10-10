@@ -3,7 +3,6 @@ import { Language } from 'src/app/language.interface';
 import { LanguageResponse } from 'src/app/language-response.interface';
 import { TranslateResponse } from 'src/app/translate-response.interface';
 import { TranslateService } from 'src/app/translate.service';
-import { Detected } from 'src/app/detected.interface';
 import { DetectedLanguageResponse } from 'src/app/detected-response.interface';
 
 @Component({
@@ -15,12 +14,6 @@ export class InputComponent {
   sourceLanguageValue: string = '';
   sourceLanguageOption: string = '';
   sourceLanguageOptions: Language[] = [];
-
-  switchedsourceLanguageOption: string = '';
-  switchedsourceLanguageValue: string = '';
-
-  switchedtranslatedLanguageOption: string = '';
-  switchedtranslatedLanguageValue: string = '';
 
   translatedLanguageValue: string = '';
   translatedLanguageOption: string = '';
@@ -47,26 +40,25 @@ export class InputComponent {
       .getDetectedLanguage(body)
       .subscribe((res: DetectedLanguageResponse) => {
         this.detectedLanguageValue = res.data.detections[0][0].language;
-        this.sourceLanguageOption = this.detectedLanguageValue;
+        this.sourceLanguageOption = this.detectedLanguageValue.toUpperCase();
+        console.log(this.sourceLanguageOption);
+        console.log(this.translatedLanguageOption);
       });
   }
 
   onSwitchLanguages() {
-    this.switchedsourceLanguageOption = this.sourceLanguageOption;
+    let auxOption = '';
+    let auxValue = '';
 
-    this.switchedtranslatedLanguageOption = this.translatedLanguageOption;
+    auxOption = this.sourceLanguageOption;
+    this.sourceLanguageOption = this.translatedLanguageOption;
+    this.translatedLanguageOption = auxOption;
 
-    this.translatedLanguageOption = this.switchedsourceLanguageOption;
+    auxValue = this.sourceLanguageValue;
+    this.sourceLanguageValue = this.translatedLanguageValue;
+    this.translatedLanguageValue = auxValue;
 
-    this.sourceLanguageOption = this.switchedtranslatedLanguageOption;
-
-    this.switchedsourceLanguageValue = this.sourceLanguageValue;
-
-    this.switchedtranslatedLanguageValue = this.translatedLanguageValue;
-
-    this.sourceLanguageValue = this.switchedtranslatedLanguageValue;
-
-    this.translatedLanguageValue = this.switchedsourceLanguageValue;
+    this.detectedLanguageValue = '';
   }
 
   ngOnInit() {
@@ -76,6 +68,5 @@ export class InputComponent {
         this.sourceLanguageOptions = response.data.languages;
         this.translatedLanguageOptions = response.data.languages;
       });
-    // this.translateService.getV3Languages().subscribe();
   }
 }
