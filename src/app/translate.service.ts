@@ -29,12 +29,6 @@ export class TranslateService {
     );
   }
 
-  // getV3Languages() {
-  //   return this.http.get(
-  //     'https://translate.googleapis.com/v3/projects/1012647738305/supportedLanguages?key=AIzaSyCDdnispOf6fax5pyJYpoKz2_OWjFk9H5A'
-  //   );
-  // }
-
   getDetectedLanguage(body: any): Observable<DetectedLanguageResponse> {
     return this.http.post<DetectedLanguageResponse>(
       'https://translation.googleapis.com/language/translate/v2/detect?key=' +
