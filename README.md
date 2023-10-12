@@ -30,16 +30,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### 1. Home Page:
 
-![chees!](/public/initial.png)
+![cheese!](/public/initial.png)
 
 ### 2. Select language:
 
-![chees!](/public/languages.png)
+![cheese!](/public/languages.png)
 
 ### 3. Translate the text:
 
-![chees!](/public/text-translated.png)
+![cheese!](/public/text-translated.png)
 
 ### 4. Switch languages and text:
 
-![chees!](/public/switch.png)
+![cheese!](/public/switch.png)
