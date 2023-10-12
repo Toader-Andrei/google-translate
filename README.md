@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Images
 
-!(/public/initial.png)
-!(/public/language.png)
-!(/public/text-translated.png)
-!(/public/switch.png)
+![chees!](/public/initial.png)
+![chees!](/public/language.png)
+![chees!](/public/text-translated.png)
+![chees!](/public/switch.png)
