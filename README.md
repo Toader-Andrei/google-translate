@@ -26,9 +26,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Images
+## PRINT-SCREENS
+
+### 1. Home Page:
 
 ![chees!](/public/initial.png)
-![chees!](/public/language.png)
+
+### 2. Select language:
+
+![chees!](/public/languages.png)
+
+### 3. Translate the text:
+
 ![chees!](/public/text-translated.png)
+
+### 4. Switch languages and text:
+
 ![chees!](/public/switch.png)
