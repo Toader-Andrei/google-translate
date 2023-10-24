@@ -1,4 +1,4 @@
-# EasyTranslate - Text translating application developted with Google Cloud
+# EasyTranslate - Angular text translating application developted with Google Cloud
 
 ## Application description:
 
@@ -25,3 +25,21 @@ EasyTranslate is a real translate application suitable for users who are willing
 ### 4. Switch languages and text:
 
 ![cheese!](/public/switch.png)
+
+## Running the project locally:
+
+#### Note: Due to security and billing reasons, the API key has been excluded from the project.
+
+#### Please see below from futher intructions.
+
+### `1. npm install`
+
+### `2. Create environment.ts file under src/enviroments`
+
+### `3. For the environment constant add a new key called 'apiKey'.`
+
+### `4. Create an API key at Words API website: ` https://cloud.google.com/translate/docs/setup
+
+### `5. Use the API key in the enviroment.ts file`
+
+### `6. ng serve --open`
