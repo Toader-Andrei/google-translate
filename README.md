@@ -1,4 +1,4 @@
-# EasyTranslate - Angular text translating application developted with Google Cloud
+# EasyTranslate - Angular text translating application developed with Google Cloud
 
 ## Application description:
 
@@ -30,7 +30,7 @@ EasyTranslate is a real translate application suitable for users who are willing
 
 #### Note: Due to security and billing reasons, the API key has been excluded from the project.
 
-#### Please see below from futher intructions.
+#### Please see below for futher intructions.
 
 ### `1. npm install`
 
