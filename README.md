@@ -34,12 +34,12 @@ EasyTranslate is a real translate application suitable for users who are willing
 
 ### `1. npm install`
 
-### `2. Create environment.ts file under src/enviroments`
+### `2. Create environment.ts file under src/environments`
 
 ### `3. For the environment constant add a new key called 'apiKey'.`
 
 ### `4. Create an API key at Words API website: ` https://cloud.google.com/translate/docs/setup
 
-### `5. Use the API key in the enviroment.ts file`
+### `5. Use the API key in the environment.ts file`
 
 ### `6. ng serve --open`
